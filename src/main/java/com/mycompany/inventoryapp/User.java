@@ -31,6 +31,7 @@ public class User extends javax.swing.JFrame {
     Connection Con = null;
     Statement State = null;
     ResultSet Rs = null;
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -43,7 +44,6 @@ public class User extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         UserName = new javax.swing.JTextField();
-        UserPassword = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         UserPhone = new javax.swing.JTextField();
@@ -54,6 +54,7 @@ public class User extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         UserTable = new javax.swing.JTable();
         jLabel10 = new javax.swing.JLabel();
+        UserPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -115,7 +116,7 @@ public class User extends javax.swing.JFrame {
         jLabel3.setBackground(new java.awt.Color(0, 153, 153));
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 153, 0));
-        jLabel3.setText("MANAGE PRODUCTS");
+        jLabel3.setText("Insert Users");
 
         jLabel4.setBackground(new java.awt.Color(51, 51, 51));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -126,9 +127,6 @@ public class User extends javax.swing.JFrame {
 
         UserName.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         UserName.setForeground(new java.awt.Color(0, 153, 153));
-
-        UserPassword.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        UserPassword.setForeground(new java.awt.Color(0, 153, 153));
 
         jLabel6.setBackground(new java.awt.Color(51, 51, 51));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -242,10 +240,10 @@ public class User extends javax.swing.JFrame {
                             .addComponent(jLabel6)
                             .addComponent(jLabel4))
                         .addGap(43, 43, 43)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(UserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(UserPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(UserName, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(UserPhone, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                            .addComponent(UserName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                            .addComponent(UserPassword, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(AddUser, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37)
@@ -264,7 +262,7 @@ public class User extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(15, 15, 15))))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(395, 395, 395)
+                .addGap(374, 374, 374)
                 .addComponent(jLabel3)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -274,19 +272,23 @@ public class User extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(UserName, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(UserPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(66, 66, 66)
+                                .addComponent(jLabel4)
+                                .addGap(26, 26, 26)
+                                .addComponent(jLabel6))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(UserName, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(UserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel8)
-                            .addComponent(UserPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(44, 44, 44)
+                            .addComponent(UserPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))
+                        .addGap(74, 74, 74)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(EditUser, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(DeleteUser, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -295,9 +297,7 @@ public class User extends javax.swing.JFrame {
                         .addComponent(UserHome, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -322,8 +322,7 @@ public class User extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-        public void SelectUser() {
+    public void SelectUser() {
         try {
             Con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "1234");
             State = Con.createStatement();
@@ -347,17 +346,17 @@ public class User extends javax.swing.JFrame {
             PreparedStatement add = Con.prepareStatement("insert into usertable values(?,?,?)");
             add.setString(1, UserName.getText());
             add.setString(2, UserPassword.getText());
-            add.setString(3,UserPhone.getText());
-            Rs = State.executeQuery("SELECT * FROM usertable WHERE UserName = '"+UserName.getText()+"'");
-            if(Rs.next()){
+            add.setString(3, UserPhone.getText());
+            Rs = State.executeQuery("SELECT * FROM usertable WHERE UserName = '" + UserName.getText() + "'");
+            if (Rs.next()) {
                 JOptionPane.showMessageDialog(this, "Username taken");
+            } else {
+                int row = add.executeUpdate();
+                JOptionPane.showMessageDialog(this, "User Successfully Added");
+                Con.close();
+                SelectUser();
             }
-            else{
-            int row = add.executeUpdate();
-            JOptionPane.showMessageDialog(this, "User Successfully Added");
-            Con.close();
-            SelectUser();
-            }} catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }//GEN-LAST:event_AddUserMouseClicked
@@ -368,7 +367,7 @@ public class User extends javax.swing.JFrame {
         } else {
             try {
                 Con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "1234");
-                String UpdateQuery = "update project.usertable set UserPassword ='" + UserPassword.getText()+"'"+", UserPhone='"+UserPhone.getText()+"'"+"where UserName=" + "'"+UserName.getText()+"'";
+                String UpdateQuery = "update project.usertable set UserPassword ='" + UserPassword.getText() + "'" + ", UserPhone='" + UserPhone.getText() + "'" + "where UserName=" + "'" + UserName.getText() + "'";
                 Statement Add = Con.createStatement();
                 Add.executeUpdate(UpdateQuery);
                 JOptionPane.showMessageDialog(this, "User updated!");
@@ -386,7 +385,7 @@ public class User extends javax.swing.JFrame {
             try {
                 Con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "1234");
                 String Id = UserName.getText();
-                String Query = "Delete from project.usertable where UserName ="+"'"+ Id+"'";
+                String Query = "Delete from project.usertable where UserName =" + "'" + Id + "'";
                 Statement Add = Con.createStatement();
                 Add.executeUpdate(Query);
                 SelectUser();
@@ -414,9 +413,6 @@ public class User extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_UserHomeMouseClicked
 
-    
-    
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -456,7 +452,7 @@ public class User extends javax.swing.JFrame {
     private javax.swing.JLabel UserExit;
     private javax.swing.JButton UserHome;
     private javax.swing.JTextField UserName;
-    private javax.swing.JTextField UserPassword;
+    private javax.swing.JPasswordField UserPassword;
     private javax.swing.JTextField UserPhone;
     private javax.swing.JTable UserTable;
     private javax.swing.JLabel jLabel10;
