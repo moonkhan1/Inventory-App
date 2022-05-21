@@ -1,11 +1,11 @@
-Category section database - categorytable
+Category section database - categorytable (Columns : CategoryID, CategoryName)
   Queries : 
     (Show all categories)"select * from categorytable", 
     (Add)"insert into categorytable values(?,?)", 
     (Delete)"Delete from project.categorytable where CategoryID="+Id,
     (Edit exist data)"update project.categorytable set CategoryName ='" + CatName.getText() + "'" + "where CategoryID=" + CatID.getText();
     
-Customer section database - customertable
+Customer section database - customertable (Columns: CustID, CustomerName, CustomerPhone)
   Queries : 
     (Show all customers)"select * from customertable",
     (Add)"insert into customertable values(?,?,?)",
@@ -14,7 +14,7 @@ Customer section database - customertable
     (Show count of the orders)"select count(*) from project.ordertable where CustomerName='" + model.getValueAt(idx, 1).toString() + "'",
     (Show sum of the orders)"select sum(Amount) from project.ordertable where CustomerName='" + model.getValueAt(idx, 1).toString() + "'"
     
-  Product section database - producttable
+  Product section database - producttable (Columns: ProdID, ProdName, ProdQty, ProdDesc, ProdCategory)
     Queries :
       (Show all products)"select * from producttable",
       (Show categories in the category selection)"select * from project.categorytable",
@@ -22,14 +22,14 @@ Customer section database - customertable
       (Delete)"Delete from project.producttable where ProdID =" + Id,
       (Edit)"update project.producttable set ProdName = '" + ProdName.getText() + "'" + ",ProdQty=" + ProdQty.getText() + "" + ",ProdDesc='" + ProdDesc.getText() + "'" + ",ProdCategory='" + ProdCat.getSelectedItem().toString() + "'" + "where ProdID=" + ProdID.getText()
    
-   Order section database - ordertable
+   Order section database - ordertable (Columns : OrderID, CustomerName, OrderDate, Amount)
     Queries :
       (Show all products)"select * from producttable",
       (Show all customers)"select * from customertable",
       (Add)"insert into ordertable values(?,?,?,?)",
       (Update quantity of the products in producttable after giving order)"update project.producttable set ProdQty ='" + newQty + "'" + "where ProdID=" + prodid
     
-    User, Login section database - usertable
+    User, Login section database - usertable (Columns : UserName, UserPassword, UserPhone)
       Queries :
         (Show all users)"select * from usertable",
         (Add)"insert into usertable values(?,?,?)",
