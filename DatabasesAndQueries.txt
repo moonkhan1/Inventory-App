@@ -1,0 +1,41 @@
+Category section database - categorytable
+  Queries : 
+    (Show all categories)"select * from categorytable", 
+    (Add)"insert into categorytable values(?,?)", 
+    (Delete)"Delete from project.categorytable where CategoryID="+Id,
+    (Edit exist data)"update project.categorytable set CategoryName ='" + CatName.getText() + "'" + "where CategoryID=" + CatID.getText();
+    
+Customer section database - customertable
+  Queries : 
+    (Show all customers)"select * from customertable",
+    (Add)"insert into customertable values(?,?,?)",
+    (Delete)"Delete from project.customertable where CustID =" + Id,
+    (Edit)"update project.customertable set CustomerName ='" + CustName.getText() + "'" + ", CustomerPhone='" + CustPhone.getText() + "'" + "where CustID=" + CustID.getText()
+    (Show count of the orders)"select count(*) from project.ordertable where CustomerName='" + model.getValueAt(idx, 1).toString() + "'",
+    (Show sum of the orders)"select sum(Amount) from project.ordertable where CustomerName='" + model.getValueAt(idx, 1).toString() + "'"
+    
+  Product section database - producttable
+    Queries :
+      (Show all products)"select * from producttable",
+      (Show categories in the category selection)"select * from project.categorytable",
+      (Add)"insert into producttable values(?,?,?,?,?)",
+      (Delete)"Delete from project.producttable where ProdID =" + Id,
+      (Edit)"update project.producttable set ProdName = '" + ProdName.getText() + "'" + ",ProdQty=" + ProdQty.getText() + "" + ",ProdDesc='" + ProdDesc.getText() + "'" + ",ProdCategory='" + ProdCat.getSelectedItem().toString() + "'" + "where ProdID=" + ProdID.getText()
+   
+   Order section database - ordertable
+    Queries :
+      (Show all products)"select * from producttable",
+      (Show all customers)"select * from customertable",
+      (Add)"insert into ordertable values(?,?,?,?)",
+      (Update quantity of the products in producttable after giving order)"update project.producttable set ProdQty ='" + newQty + "'" + "where ProdID=" + prodid
+    
+    User, Login section database - usertable
+      Queries :
+        (Show all users)"select * from usertable",
+        (Add)"insert into usertable values(?,?,?)",
+        (Edit)"update project.usertable set UserPassword ='" + UserPassword.getText() + "'" + ", UserPhone='" + UserPhone.getText() + "'" + "where UserName=" + "'" + UserName.getText() + "'",
+        (Delete)"Delete from project.usertable where UserName =" + "'" + Id + "'",
+        (Check if the User exist in usertable)"select * from project.usertable where UserName='" + Login.getText() + "' and UserPassword='" + Password.getText() + "'"
+        
+        
+        
