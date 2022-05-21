@@ -1,0 +1,8 @@
+create table producttable(ProdID İNT ,ProdName varchar(20),ProdQty İNT ,ProdDesc VARCHAR(30),ProdCategory VARCHAR(20));
+create table usertable(UserName varchar(20),UserPassword VARCHAR(20),UserPhone İNT);
+create table ordertable(OrderID İNT ,CustomerName VARCHAR(25),OrderDate VARCHAR(20) ,Amount İNT);
+create table customertable(CusID İNT ,CustomerName varchar(30),CustomerPhone VARCHAR(20));
+create table categorytable(CatID İNT ,CategoryName varchar(30));
+root
+1234
+database name - project
